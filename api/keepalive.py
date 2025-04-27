@@ -12,7 +12,7 @@ TABLE_NAME = os.getenv('TABLE_NAME')  # 你的轻量表名
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-@app.get("/keepalive")
+@app.get("/")
 async def keepalive(request: Request):
     # 校验key
     key = request.query_params.get('key')
