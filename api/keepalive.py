@@ -47,7 +47,7 @@ async def keepalive(request: Request):
 
     # 发送简单查询
     try:
-        response = supabase.table(TABLE_NAME).select('user_id').limit(1).execute()
+        response = supabase.table(TABLE_NAME).select('*').limit(1).execute()
         return {"status": "success", "message": "Keepalive ping successful."}
     except Exception as e:
         return {"status": "error", "message": str(e)}
