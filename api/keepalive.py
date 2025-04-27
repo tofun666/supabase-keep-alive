@@ -31,7 +31,7 @@ except Exception as e:
     print(f"Startup Error: {startup_error}")
 
 # 路由
-@app.get("/")
+@app.get("/api/keepalive")
 async def keepalive(request: Request):
     # 如果初始化出错，优雅返回
     if startup_error:
