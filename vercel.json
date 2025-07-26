@@ -1,4 +1,22 @@
 {
-    "version": 2
-  }
+	"version": 2,
+	"builds": [
+		{
+			"src": "api/keepalive.py",
+			"use": "@vercel/python"
+		}
+	],
+	"routes": [
+		{
+			"src": "/api/keepalive(?:/.*)?",
+			"dest": "api/keepalive.py"
+		}
+	],
+	"crons": [
+		{
+			"path": "/api/keepalive",
+			"schedule": "0 5 * * *"
+		}
+	]
+}
   
